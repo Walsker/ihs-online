@@ -1,20 +1,27 @@
 import React, {Component} from 'react';
-import {Text, View} from 'react-native';
+import {ScrollView, Text, View} from 'react-native';
 
-import {pageStyle, primaryColor} from 'ihs-online/src/components/common/appStyles';
+import {containerStyle} from 'ihs-online/src/components/common/appStyles';
+import DailyMessage from 'ihs-online/src/components/common/dayWhat/dailyMessage';
+import Date from 'ihs-online/src/components/common/dayWhat/date';
+import DayLetter from 'ihs-online/src/components/common/dayWhat/dayLetter';
+import EventList from 'ihs-online/src/components/common/dayWhat/eventList';
 import HeaderBar from 'ihs-online/src/components/common/headerBar';
-import Date from 'ihs-online/src/components/common/date';
 
 export default class DayWhatPage extends Component
 {
     render()
     {
         return(
-            <View style = {pageStyle.container}>
+            <View style = {containerStyle.default}>
                 <HeaderBar centerComponent = {<Date/>}/>
-                <View style = {pageStyle.default}>
-                    <Text>This is the Day What page.</Text>
-                </View>
+                <ScrollView>
+                    <DailyMessage/>
+                    <View style = {containerStyle.page}>
+                        <DayLetter/>
+                    </View>
+                    <EventList/>
+                </ScrollView>
             </View>
         );
     }

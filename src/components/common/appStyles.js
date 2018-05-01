@@ -6,6 +6,18 @@ export const spaceColor = 'rgb(225, 225, 225)';
 export const secondSpaceColor = 'rgb(170, 190, 240)';
 export const barColor = 'rgb(20, 40, 100)';
 
+export const actionBarStyle = StyleSheet.create(
+{
+    default:
+    {
+        height: 56,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: barColor
+    }
+});
+
 export const containerStyle = StyleSheet.create(
 {
     bigLetter:

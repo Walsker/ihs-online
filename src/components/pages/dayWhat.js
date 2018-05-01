@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import {ScrollView, Text, View} from 'react-native';
 
-import {containerStyle} from 'ihs-online/src/components/common/appStyles';
-import DailyMessage from 'ihs-online/src/components/common/dayWhat/dailyMessage';
-import Date from 'ihs-online/src/components/common/dayWhat/date';
-import DayLetter from 'ihs-online/src/components/common/dayWhat/dayLetter';
-import EventList from 'ihs-online/src/components/common/dayWhat/eventList';
-import HeaderBar from 'ihs-online/src/components/common/headerBar';
+import {containerStyle} from 'ihsOnline/src/components/common/appStyles';
+import DailyMessage from 'ihsOnline/src/components/common/dayWhat/dailyMessage';
+import Date from 'ihsOnline/src/components/common/dayWhat/date';
+import DayLetter from 'ihsOnline/src/components/common/dayWhat/dayLetter';
+import EventList from 'ihsOnline/src/components/common/events/eventList';
+import ActionBar from 'ihsOnline/src/components/common/actionBar';
 
 export default class DayWhatPage extends Component
 {
@@ -14,7 +14,7 @@ export default class DayWhatPage extends Component
     {
         return(
             <View style = {containerStyle.default}>
-                <HeaderBar centerComponent = {<Date/>}/>
+                <ActionBar centerComponent = {<Date/>}/>
                 <ScrollView>
                     <DailyMessage/>
                     <View style = {containerStyle.page}>

@@ -10,7 +10,7 @@ export default class DailyMessage extends Component
         return(
             <View style = {containerStyle.quote}>
                 <Text style = {textStyle.quote}>
-                    "An motivational quote."
+                    "A motivational quote."
                 </Text>
                 <Text style = {textStyle.quoteSource}>
                     Wal Wal

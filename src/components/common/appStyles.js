@@ -14,7 +14,8 @@ export const actionBarStyle = StyleSheet.create(
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: barColor
+        backgroundColor: barColor,
+        elevation: 3
     }
 });
 
@@ -61,6 +62,11 @@ export const textStyle = StyleSheet.create(
     bigLetter:
     {
         fontSize: 300
+    },
+    dateDisplay:
+    {
+        color: 'white',
+        fontSize: 20
     },
     eventLabel:
     {

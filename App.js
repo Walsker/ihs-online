@@ -20,3 +20,6 @@ export default class App extends Component
         );
     }
 }
+
+// This disables the timer warning as a result of using the web sdk of firebase. Keep checking for a fix for this
+//console.ignoredYellowBox = ["Setting a timer"];

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {ScrollView, Text, View} from 'react-native';
 
 import {connect} from 'react-redux';
-import * as actions from './actions';
+import {updateDate} from './actions';
 
 import {containerStyle} from 'ihsOnline/src/common/appStyles';
 import EventList from 'ihsOnline/src/common/events/eventList';
@@ -11,24 +11,22 @@ import {DailyMessage, DateDisplay, DayLetter} from './components';
 
 class DayWhatPage extends Component
 {
-    constructor(props)
-    {
-        super(props);
-
-        // Updating the current date
-        var today = (new Date()).toISOString().slice(0, 10);
-        this.props.updateDate(today);
-        
-    }
     render()
     {
+        var type = '?';
+        console.log(this.props.database);
+        if (this.props.database[this.props.currentDate])
+        {
+            type = this.props.database[this.props.currentDate].type;
+        }
+
         return(
             <View style = {containerStyle.default}>
                 <ActionBar centerComponent = {<DateDisplay date = {this.props.currentDate}/>}/>
                 <ScrollView>
                     <DailyMessage/>
                     <View style = {containerStyle.page}>
-                        <DayLetter/>
+                        <DayLetter type = {type}/>
                     </View>
                     <EventList/>
                 </ScrollView>
@@ -39,6 +37,9 @@ class DayWhatPage extends Component
 
 const mapStateToProps = (state, ownProps) =>
 {
-    return {currentDate: state.currentDate};
+    return {
+        currentDate: state.currentDate,
+        database: state.database
+    };
 }
-export default connect(mapStateToProps, actions)(DayWhatPage);
+export default connect(mapStateToProps, {updateDate})(DayWhatPage);

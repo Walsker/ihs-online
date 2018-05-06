@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Text, View} from 'react-native';
 
-import {containerStyle, textStyle} from 'ihsOnline/src/components/common/appStyles';
+import {containerStyle, textStyle} from 'ihsOnline/src/common/appStyles';
 
 export default class EventList extends Component
 {

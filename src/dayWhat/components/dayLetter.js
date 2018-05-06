@@ -1,13 +1,14 @@
 import React, {Component} from 'react';
 import {AsyncStorage, Text, View} from 'react-native';
 
-import {containerStyle, textStyle} from 'ihsOnline/src/components/common/appStyles';
+import {connect} from 'react-redux';
 
-import * as firebase from 'firebase';
+import {containerStyle, textStyle} from 'ihsOnline/src/common/appStyles';
+
 import {firebaseApp} from 'ihsOnline/firebaseConfig';
 const firebaseRef = firebaseApp.database().ref();
 
-export default class DayLetter extends Component
+class DayLetter extends Component
 {
     constructor(props)
     {
@@ -27,7 +28,7 @@ export default class DayLetter extends Component
         {
             // In here do something every time data is changed
             var data = dataSnapshot.val();
-
+            
             try
             {
                 for (var key in data)
@@ -66,3 +67,9 @@ export default class DayLetter extends Component
         );
     }
 }
+
+const mapStateToProps = (state, ownProps) =>
+{
+    return state;
+}
+export default connect()(DayLetter);

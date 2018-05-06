@@ -1,5 +1,5 @@
 import DailyMessage from './dailyMessage';
 import DateDisplay from './dateDisplay';
-import DayLetter from './dayLetter';
+import DayInfo from './DayInfo';
 
-export {DailyMessage, DateDisplay, DayLetter};
+export {DailyMessage, DateDisplay, DayInfo};

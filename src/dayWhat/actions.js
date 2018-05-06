@@ -9,76 +9,39 @@ const connectionRef = firebaseApp.database().ref('.info/connected');
 import 
 {
     UPDATE_DATE,
-    DATABASE_RETRIEVED,
-    DATABASE_ERROR,
-    CONNECTION_CHANGED
+    UPDATE_DAY_TYPE,
+    CHECK_CONNECTION
 } from './actionTypes';
 
-export const updateDate = (newDate) =>
+export const updateDate = () =>
 {
+    var today = (new Date()).toISOString().slice(0, 10);
     return {
         type: UPDATE_DATE,
-        payload: newDate
+        payload: today
     };
 };
 
-export const fetchDatabase = () =>
+export const updateDayType = (date) =>
 {
-    console.log("fetching data");
+    const dayRef = firebaseApp.database().ref(date);
     return (dispatch) =>
     {
         connectionRef.off('value');
         connectionRef.on('value', async status =>
         {
-            console.log("Connection changed:", status.val());
             if (status.val())
             {
-                connectionRef.off('value'); 
-                firebaseRef.once('value', async dataSnapshot => 
-                {
-                    try
+                connectionRef.off('value');
+                dayRef.once('value', async dataSnapshot => 
+                {                    
+                    dispatch(
                     {
-                        console.log("data received");
-                        
-                        await AsyncStorage.setItem("database", JSON.stringify(dataSnapshot.val()));
-                        dispatch(
-                        {
-                            type: DATABASE_RETRIEVED,
-                            payload: dataSnapshot.val()
-                        });
-                    }
-                    catch (error)
-                    {
-                        console.log("Error in online retrieval,", error);
-                        dispatch({type: DATABASE_ERROR});
-                    }
+                        type: UPDATE_DAY_TYPE,
+                        payload: dataSnapshot.val().type
+                    });
                 });
             }
-            else
-            {
-                try
-                {
-                    var oldData = JSON.parse(await AsyncStorage.getItem("database"));
-
-                    if (oldData == null)
-                    {
-                        dispatch({type: DATABASE_ERROR});
-                    }
-                    else
-                    {
-                        dispatch(
-                        {
-                            type: DATABASE_RETRIEVED,
-                            payload: oldData
-                        });
-                    }                    
-                }
-                catch (error)
-                {
-                    console.log("Error in offline retrieval,", error);
-                    dispatch({type: DATABASE_ERROR});
-                }
-            }
-        }); 
-    };
-};
+        });
+    }
+}

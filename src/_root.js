@@ -7,7 +7,6 @@ import {Provider} from 'react-redux';
 import {createStore, applyMiddleware} from 'redux';
 import ReduxThunk from 'redux-thunk';
 import reducers from './_rootReducer';
-import * as actions from './dayWhat/actions';
 
 // Custom imports
 import AndroidBar from 'ihsOnline/src/common/androidBar';
@@ -23,10 +22,7 @@ export default class App extends Component
     render()
     {
         const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
-        store.dispatch(actions.fetchDatabase());
 
-        var today = (new Date()).toISOString().slice(0, 10);
-        store.dispatch(actions.updateDate(today));
         return(
             <Provider store = {store}>
                 <View style = {{flex: 1}}>

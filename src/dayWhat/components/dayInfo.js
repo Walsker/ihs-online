@@ -8,7 +8,7 @@ import {containerStyle, textStyle} from 'ihsOnline/src/common/appStyles';
 import {firebaseApp} from 'ihsOnline/firebaseConfig';
 const firebaseRef = firebaseApp.database().ref();
 
-export default class DayLetter extends Component
+export default class DayInfo extends Component
 {
     render()
     {

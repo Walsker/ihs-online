@@ -1,10 +1,12 @@
 import {combineReducers} from 'redux';
 
+import connection from './connection';
 import date from './date';
-import database from './database';
+import dayType from './dayType';
 
 export default
 {
     currentDate: date,
-    database
+    currentDayType: dayType,
+    isOnline: connection
 };

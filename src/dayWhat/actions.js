@@ -9,8 +9,7 @@ const connectionRef = firebaseApp.database().ref('.info/connected');
 import 
 {
     UPDATE_DATE,
-    UPDATE_DAY_TYPE,
-    CHECK_CONNECTION
+    UPDATE_DAY_TYPE
 } from './actionTypes';
 
 export const updateDate = () =>

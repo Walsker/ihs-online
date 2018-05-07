@@ -65,9 +65,9 @@ class DayWhatPage extends Component
                         />
                     }
                 >
-                    <DailyMessage/>
+                    {/* <DailyMessage/> */}
                     {this.renderDayInfo()}
-                    <EventList/>
+                    {/* <EventList/> */}
                 </ScrollView>
             </View>
         );

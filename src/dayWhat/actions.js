@@ -14,7 +14,14 @@ import
 
 export const updateDate = () =>
 {
-    var today = (new Date()).toISOString().slice(0, 10);
+    // Calculating the current date based on the timezeon since
+    // .toISOString() returns a time in UTC (GMT)
+    const MS_PER_MINUTE = 60000;
+    var day = new Date();
+    var offset = day.getTimezoneOffset(); // Retrieves timezone difference in minutes
+    var correctedDate = new Date(day.valueOf() - (offset * MS_PER_MINUTE));
+    var today = correctedDate.toISOString().slice(0, 10);
+
     return {
         type: UPDATE_DATE,
         payload: today

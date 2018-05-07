@@ -61,12 +61,14 @@ export const textStyle = StyleSheet.create(
 {
     bigLetter:
     {
-        fontSize: 300
+        fontSize: 300,
+        fontFamily: 'LemonMilk'
     },
     dateDisplay:
     {
         color: 'white',
-        fontSize: 20
+        fontSize: 25,
+        fontFamily: 'LemonMilk'
     },
     eventLabel:
     {

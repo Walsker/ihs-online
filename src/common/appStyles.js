@@ -1,10 +1,12 @@
 import {StyleSheet} from 'react-native';
 
-export const primaryColor = 'rgb(80, 120, 210)';
-export const secondaryColor = 'rgb(100, 100, 100)';
+export const primaryColor = 'rgb(170, 190, 240)';
+export const secondaryColor = 'rgb(80, 120, 210)';
 export const spaceColor = 'rgb(225, 225, 225)';
-export const secondSpaceColor = 'rgb(170, 190, 240)';
+export const secondSpaceColor = 'rgba(0, 0, 0, .3)';
 export const barColor = 'rgb(20, 40, 100)';
+
+const bigLetterSize = 300;
 
 export const actionBarStyle = StyleSheet.create(
 {
@@ -23,7 +25,13 @@ export const containerStyle = StyleSheet.create(
 {
     bigLetter:
     {
-        marginVertical: 50
+        backgroundColor: secondSpaceColor,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginVertical: 50,
+        width: bigLetterSize + 50,
+        height: bigLetterSize + 50,
+        borderRadius: (bigLetterSize + 50) / 2
     },
     default:
     {
@@ -52,7 +60,6 @@ export const containerStyle = StyleSheet.create(
     quote:
     {
         backgroundColor: primaryColor,
-        //marginTop: 40,
         alignItems: 'center'
     }
 });
@@ -61,8 +68,13 @@ export const textStyle = StyleSheet.create(
 {
     bigLetter:
     {
-        fontSize: 300,
-        fontFamily: 'LemonMilk'
+        position: 'absolute',
+        color: primaryColor,
+        fontSize: bigLetterSize,
+        fontFamily: 'LemonMilk',
+        textShadowOffset: {width: 6, height: -5},
+        textShadowRadius: 1,
+        textShadowColor: barColor
     },
     dateDisplay:
     {

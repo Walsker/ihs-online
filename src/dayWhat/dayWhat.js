@@ -7,7 +7,7 @@ import {updateDate, updateDayType} from './actions';
 import {containerStyle} from 'ihsOnline/src/common/appStyles';
 import EventList from 'ihsOnline/src/common/events/eventList';
 import ActionBar from 'ihsOnline/src/common/actionBar';
-import {DailyMessage, DateDisplay, DayInfo} from './components';
+import {DailyMessage, DateDisplay, BigLetter} from './components';
 
 class DayWhatPage extends Component
 {
@@ -31,7 +31,7 @@ class DayWhatPage extends Component
         {
             return(
                 <View style = {containerStyle.page}>
-                    <DayInfo type = {this.props.currentDayType}/>
+                    <BigLetter type = {this.props.currentDayType}/>
                 </View>
             );
         }

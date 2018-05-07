@@ -1,14 +1,9 @@
 import React, {Component} from 'react';
 import {AsyncStorage, Text, View} from 'react-native';
 
-import {connect} from 'react-redux';
-
 import {containerStyle, textStyle} from 'ihsOnline/src/common/appStyles';
 
-import {firebaseApp} from 'ihsOnline/firebaseConfig';
-const firebaseRef = firebaseApp.database().ref();
-
-export default class DayInfo extends Component
+export default class BigLetter extends Component
 {
     render()
     {

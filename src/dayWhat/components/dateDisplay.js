@@ -1,9 +1,11 @@
+// React Native imports
 import React, {Component} from 'react';
 import {Text} from 'react-native';
 
+// Custom imports
 import {textStyle} from 'ihsOnline/src/common/appStyles';
-const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
+const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 export default class DateDisplay extends Component
 {
     format(dateString)

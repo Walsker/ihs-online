@@ -1,9 +1,12 @@
+// React Native imports
 import React, {Component} from 'react';
 import {RefreshControl, ScrollView, Text, View} from 'react-native';
 
+// Redux imports
 import {connect} from 'react-redux';
 import {updateDate, updateDayType} from './actions';
 
+// Custom imports
 import {containerStyle} from 'ihsOnline/src/common/appStyles';
 import EventList from 'ihsOnline/src/common/events/eventList';
 import ActionBar from 'ihsOnline/src/common/actionBar';
@@ -65,9 +68,7 @@ class DayWhatPage extends Component
                         />
                     }
                 >
-                    {/* <DailyMessage/> */}
                     {this.renderDayInfo()}
-                    {/* <EventList/> */}
                 </ScrollView>
             </View>
         );

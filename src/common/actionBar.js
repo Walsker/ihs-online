@@ -1,8 +1,8 @@
-import React from 'react';
-import {TouchableOpacity, View} from 'react-native';
-import {actionBarStyle, barColor, primaryColor} from './appStyles';
+import React, {Component} from 'react';
+import {View} from 'react-native';
+import {actionBarStyle} from './appStyles';
 
-export default class ActionBar extends React.Component
+export default class ActionBar extends Component
 {
     render()
     {

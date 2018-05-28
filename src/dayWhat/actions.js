@@ -1,20 +1,17 @@
 // React Native imports
 import {AsyncStorage} from 'react-native';
 
+// Redux imports
+import {UPDATE_DATE, UPDATE_DAY_TYPE} from './actionTypes';
+
 // Firebase imports
 import {firebaseApp} from 'ihsOnline/firebaseConfig';
 const firebaseRef = firebaseApp.database().ref();
 const connectionRef = firebaseApp.database().ref('.info/connected');
 
-import 
-{
-    UPDATE_DATE,
-    UPDATE_DAY_TYPE
-} from './actionTypes';
-
 export const updateDate = () =>
 {
-    // Calculating the current date based on the timezeon since
+    // Calculating the current date based on the timezone since
     // .toISOString() returns a time in UTC (GMT)
     const MS_PER_MINUTE = 60000;
     var day = new Date();

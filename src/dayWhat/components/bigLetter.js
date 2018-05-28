@@ -1,6 +1,8 @@
+// React Native imports
 import React, {Component} from 'react';
-import {AsyncStorage, Text, View} from 'react-native';
+import {Text, View} from 'react-native';
 
+// Custom imports
 import {containerStyle, textStyle} from 'ihsOnline/src/common/appStyles';
 
 export default class BigLetter extends Component

@@ -38,16 +38,6 @@ export const containerStyle = StyleSheet.create(
         flex: 1,
         backgroundColor: spaceColor
     },
-    eventList:
-    {
-        flex: 1,
-        backgroundColor: secondSpaceColor
-    },
-    eventLabel:
-    {
-        backgroundColor: barColor,
-        alignItems: 'center'
-    },
     page:
     {
         flex: 1,
@@ -56,11 +46,6 @@ export const containerStyle = StyleSheet.create(
         paddingVertical: 5,
         alignItems: 'center',
         justifyContent: 'flex-start',
-    },
-    quote:
-    {
-        backgroundColor: primaryColor,
-        alignItems: 'center'
     }
 });
 
@@ -68,7 +53,6 @@ export const textStyle = StyleSheet.create(
 {
     bigLetter:
     {
-        position: 'absolute',
         color: primaryColor,
         fontSize: bigLetterSize,
         fontFamily: 'LemonMilk',
@@ -81,20 +65,5 @@ export const textStyle = StyleSheet.create(
         color: 'white',
         fontSize: 25,
         fontFamily: 'LemonMilk'
-    },
-    eventLabel:
-    {
-        color: spaceColor,
-        fontSize: 28
-    },
-    quote:
-    {
-        color: spaceColor,
-        fontSize: 21
-    },
-    quoteSource:
-    {
-        color: spaceColor,
-        fontSize: 16
     }
 });

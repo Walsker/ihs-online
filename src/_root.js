@@ -1,4 +1,4 @@
-// React (native) imports
+// React Native imports
 import React, {Component} from 'react';
 import {AsyncStorage, StatusBar, View} from 'react-native';
 
@@ -14,11 +14,6 @@ import {DayWhatPage} from 'ihsOnline/src/dayWhat';
 
 export default class App extends Component
 {
-    constructor(props)
-    {
-        super(props);
-    }
-
     render()
     {
         const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
@@ -30,7 +25,8 @@ export default class App extends Component
                     <StatusBar
                         translucent
                         animated
-                        backgroundColor = "rgba(0, 0, 0, 0.2)"/>
+                        backgroundColor = "rgba(0, 0, 0, 0.2)"
+                    />
                     <DayWhatPage/>
                 </View>
             </Provider>

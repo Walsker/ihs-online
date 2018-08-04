@@ -1,10 +1,18 @@
 import {StyleSheet} from 'react-native';
 
-export const primaryColor = 'rgb(170, 190, 240)';
-export const secondaryColor = 'rgb(80, 120, 210)';
-export const spaceColor = 'rgb(225, 225, 225)';
-export const secondSpaceColor = 'rgba(0, 0, 0, .3)';
-export const barColor = 'rgb(20, 40, 100)';
+export const colors = 
+{
+    spaceColor: 'rgb(250, 250, 250)',
+    darkSpaceColor: 'rgb(200, 200, 200)',
+    accentColor: '#FF4081',
+    primaryColor: '#3F51B5',
+    darkPrimaryColor: '#303F9F',
+    lightPrimaryColor: '#C5CAE9',
+    primaryTextColor: '#212121',
+    secondaryTextColor: '#757575',
+    dividerColor: 'rgba(0, 0, 0, 0.1)',
+    titleAndIconColor: '#FFFFFF'
+}
 
 const bigLetterSize = 300;
 
@@ -16,7 +24,7 @@ export const actionBarStyle = StyleSheet.create(
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: barColor,
+        backgroundColor: colors.primaryColor,
         elevation: 3
     }
 });
@@ -25,7 +33,7 @@ export const containerStyle = StyleSheet.create(
 {
     bigLetter:
     {
-        backgroundColor: secondSpaceColor,
+        backgroundColor: colors.lightPrimaryColor + '55',
         justifyContent: 'center',
         alignItems: 'center',
         marginVertical: 50,
@@ -36,12 +44,19 @@ export const containerStyle = StyleSheet.create(
     default:
     {
         flex: 1,
-        backgroundColor: spaceColor
+        backgroundColor: colors.spaceColor
+    },
+    drawerHeader:
+    {
+        flex: 0.25,
+        backgroundColor: colors.primaryColor,
+        justifyContent: 'center',
+        paddingLeft: 10
     },
     page:
     {
         flex: 1,
-        backgroundColor: spaceColor,
+        backgroundColor: colors.spaceColor,
         paddingHorizontal: 20,
         paddingVertical: 5,
         alignItems: 'center',
@@ -49,21 +64,49 @@ export const containerStyle = StyleSheet.create(
     }
 });
 
-export const textStyle = StyleSheet.create(
+const createFont = (size, alignment) =>
 {
+    var style = {color: colors.primaryTextColor};
+
+    if (size)
+    {
+        style["fontSize"] = size;
+    }
+    if (alignment)
+    {
+        style["textAlign"] = alignment;
+    }
+    
+    return style;
+};
+
+export const textStyle = 
+{
+    regular: (size, alignment) => 
+    {
+        return Object.assign({fontFamily: 'LemonMilk'}, createFont(size, alignment));
+    },
+    bold: (size, alignment) => 
+    {
+        return Object.assign({fontFamily: 'LemonMilkbold'}, createFont(size, alignment));
+    },
+    italic: (size, alignment) => 
+    {
+        return Object.assign({fontFamily: 'LemonMilkitalic'}, createFont(size, alignment));
+    },
+    actionBarTitle:
+    {
+        color: colors.titleAndIconColor,
+        fontSize: 24,
+        fontFamily: 'LemonMilkbold'
+    },
     bigLetter:
     {
-        color: primaryColor,
+        color: colors.lightPrimaryColor,
         fontSize: bigLetterSize,
         fontFamily: 'LemonMilk',
         textShadowOffset: {width: 6, height: -5},
         textShadowRadius: 1,
-        textShadowColor: barColor
+        textShadowColor: colors.darkPrimaryColor
     },
-    dateDisplay:
-    {
-        color: 'white',
-        fontSize: 25,
-        fontFamily: 'LemonMilk'
-    }
-});
+}

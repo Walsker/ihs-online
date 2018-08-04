@@ -7,9 +7,10 @@ import {connect} from 'react-redux';
 import {updateDate, updateDayType} from './actions';
 
 // Custom imports
-import {containerStyle} from 'ihsOnline/src/common/appStyles';
-import EventList from 'ihsOnline/src/common/events/eventList';
+import {colors, containerStyle} from 'ihsOnline/src/common/appStyles';
+// import EventList from 'ihsOnline/src/common/events/eventList';
 import ActionBar from 'ihsOnline/src/common/actionBar';
+import IconButton from 'ihsOnline/src/common/iconButton';
 import {DailyMessage, DateDisplay, BigLetter} from './components';
 
 class DayWhatPage extends Component
@@ -58,7 +59,17 @@ class DayWhatPage extends Component
         this.update();
         return(
             <View style = {containerStyle.default}>
-                <ActionBar centerComponent = {<DateDisplay date = {this.props.currentDate}/>}/>
+                <ActionBar 
+                    leftButton = {
+                        <IconButton
+                            type = 'menu'
+                            size = {30}
+                            color = {colors.titleAndIconColor}
+                            action = {() => this.props.navigation.openDrawer()}
+                        />
+                    }
+                    centerComponent = {<DateDisplay date = {this.props.currentDate}/>}
+                />
                 <ScrollView
                     refreshControl = 
                     {

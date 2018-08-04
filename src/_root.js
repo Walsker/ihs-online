@@ -10,7 +10,7 @@ import reducers from './_rootReducer';
 
 // Custom imports
 import AndroidBar from 'ihsOnline/src/common/androidBar';
-import {DayWhatPage} from 'ihsOnline/src/dayWhat';
+import RootNavigator from './_rootNavigator';
 
 export default class App extends Component
 {
@@ -27,7 +27,7 @@ export default class App extends Component
                         animated
                         backgroundColor = "rgba(0, 0, 0, 0.2)"
                     />
-                    <DayWhatPage/>
+                    <RootNavigator/>
                 </View>
             </Provider>
         );

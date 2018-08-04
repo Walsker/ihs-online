@@ -18,7 +18,7 @@ export default class DateDisplay extends Component
     render()
     {
         return(
-            <Text style = {textStyle.dateDisplay}>
+            <Text style = {textStyle.actionBarTitle}>
                 {this.format(this.props.date)}
             </Text>
         );
